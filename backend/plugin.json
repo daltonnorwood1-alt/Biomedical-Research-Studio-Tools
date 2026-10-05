@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "biomedical-research-studio",
+  "version": "0.4.1",
+  "description": "A human-governed suite of biomedical research skills for manuscript writing, evidence review, integrity auditing, approvals, and controlled document delivery.",
+  "author": {
+    "name": "Dalton Norwood"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "biomedical-research",
+    "manuscript-writing",
+    "evidence-integrity",
+    "peer-review",
+    "tracked-changes"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/onboarding/SKILL.md",
+      "interface": {
+        "displayName": "Biomedical Research Studio",
+        "shortDescription": "Governed research workflows",
+        "longDescription": "A Senior Investigator coordinates bounded skills for biomedical manuscript drafting, peer-review response, literature synthesis, scientific integrity review, approvals, and controlled document production.",
+        "developerName": "Dalton Norwood",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write", "Data analysis", "Document review", "Literature search", "Reference management"],
+        "defaultPrompt": [
+          "Start a governed biomedical manuscript project.",
+          "Audit my manuscript, tables, and figures.",
+          "Prepare an evidence-linked revision plan."
+        ],
+        "brandColor": "#123C46",
+        "composerIcon": "./assets/composer-icon.svg",
+        "logo": "./assets/logo.svg"
+      }
+    }
+  }
+}

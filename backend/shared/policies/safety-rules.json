@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "last_reviewed": "2026-10-04",
+  "rules": [
+    {
+      "id": "SAF-FLUENCY-001",
+      "name": "AI Fluency Is Not Correctness",
+      "role": "AI Safety Officer and Scientific Integrity Auditor",
+      "purpose": "Prevent confident prose from exceeding verified evidence.",
+      "applies_to": ["AI-generated", "human-authored", "hybrid"],
+      "risk_domains": ["hallucination", "scientific-integrity", "clinical-safety", "misinformation"],
+      "core_logic": "Classify material claims as verified, author-provided-unverified, plausible-unverified, unsupported, or conflicted; remediate by verification, qualification, author query, or removal.",
+      "prohibitions": ["present unverified statements as fact", "fabricate facts, citations, statistics, guidelines, or consensus"],
+      "version": "1.0.0",
+      "escalation_threshold": "Any critical severity requires human review."
+    },
+    {
+      "id": "SAF-CITATION-002",
+      "name": "Citations Must Be Verified",
+      "role": "AI Safety Officer and Reference Integrity Auditor",
+      "purpose": "Prevent fabricated, misattributed, misleading, or unverifiable sources.",
+      "applies_to": ["AI-generated", "human-authored", "hybrid"],
+      "risk_domains": ["hallucination", "scientific-integrity", "misinformation", "research-ethics", "clinical-safety"],
+      "core_logic": "Verify existence and metadata separately from direct claim support; never invent a replacement.",
+      "prohibitions": ["fabricated references", "citation placeholders presented as real", "vague attribution", "mis-citation"],
+      "version": "1.0.0",
+      "escalation_threshold": "Any fabricated or misattributed citation requires human review."
+    },
+    {
+      "id": "SAF-STATS-003",
+      "name": "Statistics Must Be Understood",
+      "role": "AI Safety Officer and Statistical Integrity Auditor",
+      "purpose": "Prevent incorrect statistical interpretation and unsupported inference.",
+      "applies_to": ["AI-generated", "human-authored", "hybrid"],
+      "risk_domains": ["statistical-misuse", "scientific-integrity", "clinical-safety"],
+      "core_logic": "Require design-method alignment, effect sizes, precision, denominators, assumptions, uncertainty, and relevant missingness, clustering, multiplicity, and confounding review.",
+      "prohibitions": ["proof language", "trend toward significance", "non-significance as no effect", "p-values without context"],
+      "version": "1.0.0",
+      "escalation_threshold": "Any critical statistical misinterpretation requires statistician review."
+    },
+    {
+      "id": "SAF-CAUSAL-004",
+      "name": "Association Is Not Causation",
+      "role": "AI Safety Officer and Causal Inference Auditor",
+      "purpose": "Prevent causal overreach from observational or insufficient designs.",
+      "applies_to": ["AI-generated", "human-authored", "hybrid"],
+      "risk_domains": ["causal-inference", "scientific-integrity", "clinical-safety", "policy-misuse"],
+      "core_logic": "Align language with design and methods; disclose confounding, bias, and alternative explanations.",
+      "prohibitions": ["unsupported causal verbs", "adjustment as causal proof", "unsupported intervention implications"],
+      "version": "1.0.0",
+      "escalation_threshold": "Any critical causal overreach requires causal inference expert review."
+    },
+    {
+      "id": "SAF-CLIN-005",
+      "name": "Clinical Significance Is Not Statistical Significance",
+      "role": "AI Safety Officer and Clinical Impact Auditor",
+      "purpose": "Prevent statistically significant findings from being misrepresented as clinically important.",
+      "applies_to": ["AI-generated", "human-authored", "hybrid"],
+      "risk_domains": ["statistical-misuse", "clinical-misinterpretation", "policy-overreach"],
+      "core_logic": "Assess effect magnitude, precision, absolute and relative effects, patient relevance, harms, outcome validity, and MCID where known.",
+      "prohibitions": ["p-value-only benefit claims", "surrogate as patient benefit", "inflated implications"],
+      "version": "1.0.0",
+      "escalation_threshold": "Any critical clinical overinterpretation requires clinician review."
+    }
+  ],
+  "mandatory_report_fields": [
+    "safety_rule_applied", "rule_id", "compliance_summary", "violations", "required_remediation",
+    "limitations", "verdict"
+  ],
+  "verdicts": ["PASS", "CONDITIONAL PASS", "FAIL"]
+}

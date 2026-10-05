@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Local-first, human-governed biomedical manuscript workspace">
+  <title>Biomedical Research Studio</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">LOCAL-FIRST · HUMAN-GOVERNED</p>
+      <h1>Biomedical Research Studio</h1>
+    </div>
+    <div class="safety-chip" aria-label="Release state"><span aria-hidden="true"></span><strong id="releaseState">No project selected</strong></div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="kicker">Senior Investigator workspace</p>
+        <h2 id="hero-title">Evidence before eloquence.</h2>
+        <p>Build manuscripts through immutable sources, explicit scientific decisions, and approval-gated revisions. Nothing becomes publication-ready by implication.</p>
+      </div>
+      <div class="phase-map" aria-label="Approval gates">
+        <ol id="gateList">
+          <li data-gate="A"><span>A</span> Scope</li><li data-gate="B"><span>B</span> Evidence</li><li data-gate="C"><span>C</span> Audit</li><li data-gate="D"><span>D</span> Revision</li><li data-gate="E"><span>E</span> Release</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="workspace-grid">
+      <nav class="rail" aria-label="Workspace sections">
+        <button class="nav-item active" data-view="dashboard">Overview</button>
+        <button class="nav-item" data-view="intake">Source intake</button>
+        <button class="nav-item" data-view="tasks">Task menu</button>
+        <button class="nav-item" data-view="evidence">Evidence ledger</button>
+        <button class="nav-item" data-view="approvals">Approval inbox</button>
+        <button class="nav-item" data-view="artifacts">Artifact center</button>
+      </nav>
+
+      <div class="content">
+        <section class="view active" id="dashboard" aria-labelledby="dashboard-title">
+          <div class="section-heading"><div><p class="kicker">Command view</p><h2 id="dashboard-title">Project overview</h2></div><button class="button secondary" id="refreshButton">Refresh</button></div>
+          <div id="emptyState" class="empty-state">
+            <div class="empty-mark" aria-hidden="true">+</div>
+            <h3>Begin with the study, not the prose</h3>
+            <p>Create a project, then upload the protocol or proposal if available. The Senior Investigator will inventory what exists before asking for missing information.</p>
+            <button class="button primary" data-go="intake">Create project</button>
+          </div>
+          <div id="dashboardContent" hidden>
+            <div class="metric-grid" id="metrics"></div>
+            <div class="panel-grid">
+              <article class="panel"><p class="kicker">Recommended next action</p><h3 id="nextAction">Complete source intake</h3><p id="nextActionDetail">Upload governing materials and resolve privacy findings.</p></article>
+              <article class="panel"><p class="kicker">Selected evidence basis</p><h3 id="sourceCount">0 immutable sources</h3><p>Every source is hashed and versioned. Conflicts remain visible until a human resolves them.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="intake" aria-labelledby="intake-title">
+          <div class="section-heading"><div><p class="kicker">Phase 01</p><h2 id="intake-title">Project and source intake</h2></div></div>
+          <form id="projectForm" class="form-card">
+            <fieldset><legend>Create a governed project</legend>
+              <div class="form-grid">
+                <label>Project title<input name="title" required maxlength="200"></label>
+                <label>Desired outcome<select name="project_type"><option>new manuscript</option><option>section drafting</option><option>manuscript revision</option><option>peer review response</option><option>data integrity audit</option><option>journal adaptation</option><option>submission package</option></select></label>
+                <label>Article type<input name="article_type" required placeholder="Original research"></label>
+                <label>Study design<input name="study_design" placeholder="Retrospective cohort"></label>
+                <label>Target journal<input name="target_journal" placeholder="Optional at intake"></label>
+                <label>Sensitivity<select name="sensitivity"><option value="sensitive">Sensitive</option><option value="restricted">Restricted</option><option value="internal">Internal</option><option value="public">Public</option></select></label>
+              </div>
+              <button class="button primary" type="submit">Create project</button>
+            </fieldset>
+          </form>
+          <form id="uploadForm" class="drop-card" hidden>
+            <label for="sourceFile"><strong>Add proposal, protocol, manuscript, outputs, tables, figures, or reviewer report</strong><span>Files are hashed locally. Identifier screening happens before downstream use.</span></label>
+            <input id="sourceFile" name="file" type="file" required>
+            <button class="button primary" type="submit">Inventory source</button>
+          </form>
+          <div id="sourceInventory" class="record-list" aria-live="polite"></div>
+        </section>
+
+        <section class="view" id="tasks" aria-labelledby="tasks-title"><div class="section-heading"><div><p class="kicker">Bounded work</p><h2 id="tasks-title">Numbered task menu</h2></div></div><div id="taskList" class="record-list"></div></section>
+        <section class="view" id="evidence" aria-labelledby="evidence-title"><div class="section-heading"><div><p class="kicker">Traceable knowledge</p><h2 id="evidence-title">Evidence ledger</h2></div></div><div id="evidenceList" class="record-list"></div></section>
+        <section class="view" id="approvals" aria-labelledby="approvals-title"><div class="section-heading"><div><p class="kicker">Human authority</p><h2 id="approvals-title">Approval inbox</h2></div></div><div id="approvalList" class="record-list"></div></section>
+        <section class="view" id="artifacts" aria-labelledby="artifacts-title"><div class="section-heading"><div><p class="kicker">Controlled release</p><h2 id="artifacts-title">Artifact center</h2></div></div><div id="artifactList" class="record-list"></div></section>
+      </div>
+    </section>
+  </main>
+  <div id="notice" class="notice" role="status" aria-live="polite"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log
+.env
+data/
+playwright-report/
+test-results/
+imported-sources/*.zip
+__pycache__/
+*.pyc

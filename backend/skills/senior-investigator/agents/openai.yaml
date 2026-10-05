@@ -1,0 +1,6 @@
+interface:
+  display_name: "Senior Investigator"
+  short_description: "Coordinate governed biomedical research work"
+  default_prompt: "Use $senior-investigator to start or continue my governed biomedical research project."
+policy:
+  allow_implicit_invocation: true

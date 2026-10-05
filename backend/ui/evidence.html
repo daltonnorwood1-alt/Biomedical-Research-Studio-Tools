@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Claim-to-source evidence workspace</title><link rel="stylesheet" href="./styles.css">
+</head>
+<body data-surface="evidence">
+  <a class="skip-link" href="#main">Skip to evidence</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">BR</span><div class="brand-copy"><strong>Evidence workspace</strong><span>Claims, passages and citation health</span></div></div>
+      <div class="toolbar"><button class="button compact" data-display="inline">Compact</button><button class="button compact primary" data-display="fullscreen">Full screen</button></div>
+    </header>
+    <main class="main" id="main">
+      <div class="content">
+        <div class="page-heading"><div><p class="eyebrow">Evidence before citation</p><h1>Claim-to-source ledger</h1><p class="lede">A citation is not support until an exact passage is linked to the claim and reviewed.</p></div><button class="button primary" id="searchPubmed">Search PubMed</button></div>
+        <div class="grid evidence-grid">
+          <section class="panel" aria-labelledby="claimsHeading"><div class="card-header"><div><p class="eyebrow">Manuscript</p><h2 id="claimsHeading">Claims</h2></div><span class="badge warning" id="claimCount">0</span></div><div class="select-list" id="claimList"><p class="muted">Extract a DOCX or text manuscript to populate claims.</p></div></section>
+          <section class="panel" aria-labelledby="sourcesHeading"><div class="card-header"><div><p class="eyebrow">Literature</p><h2 id="sourcesHeading">Sources and passages</h2></div><span class="badge" id="sourceCount">0</span></div><div class="select-list" id="literatureList"><p class="muted">Search PubMed or import an EndNote library to add citations.</p></div></section>
+          <aside class="panel" aria-labelledby="linksHeading"><div class="card-header"><div><p class="eyebrow">Human review</p><h2 id="linksHeading">Proposed links</h2></div><span class="badge" id="linkCount">0</span></div><div id="linkList"><p class="muted">Select a claim and an exact passage before proposing a relation.</p></div><div class="callout"><span>Citation-health alerts never silently remove a source or alter manuscript text.</span></div></aside>
+        </div>
+      </div>
+    </main>
+  </div>
+  <dialog id="searchDialog"><form id="pubmedForm"><div class="modal-header"><div><p class="eyebrow">Live literature connector</p><h2>Search PubMed</h2></div><button class="button icon-button ghost" type="button" data-close-modal aria-label="Close">×</button></div><div class="modal-body"><div class="field"><label for="pubmedQuery">Search query</label><input id="pubmedQuery" name="query" required maxlength="500" autocomplete="off"><small>Do not include patient identifiers. The exact query and timestamp will be logged.</small></div><div class="field"><label for="pubmedLimit">Maximum results</label><select id="pubmedLimit" name="limit"><option>10</option><option>20</option><option>50</option></select></div></div><div class="modal-footer"><button class="button" type="button" data-close-modal>Cancel</button><button class="button primary" type="submit">Run search</button></div></form></dialog>
+  <div class="toast-region" id="toasts" aria-live="polite"></div><script type="module" src="./ui.js"></script>
+</body>
+</html>

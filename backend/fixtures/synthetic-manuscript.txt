@@ -1,0 +1,6 @@
+SYNTHETIC TEST MATERIAL — NO REAL PATIENT DATA
+
+Aim: Estimate the association between exposure X and outcome Y in an observational cohort.
+Methods: We fit a prespecified regression model and report effect estimates with 95% confidence intervals.
+Results: Exposure X was associated with outcome Y. Table 2 reports the verified estimate.
+Discussion: The observational design does not establish causation.

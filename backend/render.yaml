@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: biomedical-research-studio-tools
+    runtime: docker
+    plan: 0.5c-512mb
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: BRS_AUTH_MODE
+        value: oauth
+      - key: BRS_OAUTH_ISSUER
+        sync: false
+      - key: BRS_OAUTH_JWKS_URI
+        sync: false
+      - key: BRS_DOCUMENTATION_URL
+        value: https://daltonnorwood1-alt.github.io/Biomedical-Research-Studio-Tools/
+      - key: BRS_PRIVACY_POLICY_URL
+        value: https://daltonnorwood1-alt.github.io/Biomedical-Research-Studio-Tools/privacy.html
+      - key: BRS_TERMS_URL
+        value: https://daltonnorwood1-alt.github.io/Biomedical-Research-Studio-Tools/terms.html
+    disk:
+      name: biomedical-research-data
+      mountPath: /data
+      sizeGB: 10

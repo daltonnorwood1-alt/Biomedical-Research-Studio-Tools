@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><title>Integrity review</title><link rel="stylesheet" href="./styles.css"></head>
+<body data-surface="review">
+  <a class="skip-link" href="#sourcePane">Skip to source</a>
+  <div class="review-shell">
+    <header class="review-toolbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">BR</span><div class="brand-copy"><strong>Source vs. findings</strong><span>manuscript_v7.docx · Results</span></div></div>
+      <div class="toolbar"><button class="button compact" id="previousFinding">Previous</button><button class="button compact" id="nextFinding">Next</button><button class="button compact" data-display="inline">Compact</button><button class="button compact primary" data-display="fullscreen">Full screen</button></div>
+    </header>
+    <main class="review-main">
+      <section class="source-pane" id="sourcePane" aria-labelledby="sourceTitle">
+        <article class="paper">
+          <p class="eyebrow">Source document · page 8</p><h1 id="sourceTitle">Results</h1>
+          <p>Among <mark id="source-F-014" tabindex="-1">1,284 participants included in the primary analysis</mark>, 642 were assigned to the intervention group and 637 to the comparator group. Median follow-up was 18.4 months.</p>
+          <p>The primary outcome occurred in 184 participants in the intervention group and 216 in the comparator group (adjusted hazard ratio, 0.82; 95% confidence interval, 0.68 to 0.98).</p>
+          <h2>Secondary outcomes</h2><p>No material difference was observed in all-cause mortality. Hospitalization was lower in the intervention group, although the analysis was not adjusted for multiplicity.</p>
+          <p>The treatment effect was consistent across prespecified subgroups. <mark id="source-F-018" tabindex="-1">The interaction P value for age was 0.05.</mark></p>
+        </article>
+      </section>
+      <aside class="findings-pane" aria-labelledby="findingsTitle">
+        <div class="page-heading"><div><p class="eyebrow">Integrity audit</p><h1 id="findingsTitle">2 findings</h1><p class="lede">Select a finding to locate its source text.</p></div></div>
+        <article class="finding critical selected" data-finding="F-014" tabindex="0">
+          <div class="card-header"><div><span class="badge danger">Major · high confidence</span><h2 style="margin-top:10px">Participant count mismatch</h2></div><span class="muted">F-014</span></div>
+          <p>Results states n=1,284, but Table 1 group counts sum to n=1,279.</p><div class="evidence"><strong>Reproducible evidence</strong><br>642 intervention + 637 comparator = 1,279. The analysis output also reports 1,279 complete cases.</div>
+          <div class="card-actions"><button class="button primary" data-review-action="resolve" data-id="F-014">Resolve</button><button class="button" data-review-action="clarify" data-id="F-014">Ask author</button><button class="button ghost" data-message="Explain finding F-014 and its scientific consequence using only the linked project evidence.">Explain in chat</button></div>
+        </article>
+        <article class="finding" data-finding="F-018" tabindex="0">
+          <div class="card-header"><div><span class="badge warning">Minor · moderate confidence</span><h2 style="margin-top:10px">Boundary P value wording</h2></div><span class="muted">F-018</span></div>
+          <p>The unrounded interaction P value is 0.054. The displayed value should follow the project rounding rule and should not imply significance.</p><div class="evidence"><strong>Comparator</strong><br>Statistical output: 0.0541. Analysis plan: report three decimals for interaction tests.</div>
+          <div class="card-actions"><button class="button primary" data-review-action="resolve" data-id="F-018">Resolve</button><button class="button" data-review-action="accept" data-id="F-018">Accept as written</button></div>
+        </article>
+      </aside>
+    </main>
+  </div>
+  <dialog id="resolutionDialog"><form id="resolutionForm"><div class="modal-header"><div><p class="eyebrow">Scientific decision</p><h2>Resolve finding <span id="resolutionId"></span></h2></div><button class="button icon-button ghost" type="button" data-close-modal aria-label="Close">×</button></div><div class="modal-body"><fieldset><legend>Which source is authoritative?</legend><div class="choice-stack"><label class="choice"><input type="radio" name="authoritative_source" value="analysis-output" required><span><strong>Verified analysis output</strong><span>Use the complete-case population reported by model 3.</span></span></label><label class="choice"><input type="radio" name="authoritative_source" value="table"><span><strong>Approved table</strong><span>Use the population represented in the locked table.</span></span></label><label class="choice"><input type="radio" name="authoritative_source" value="unresolved"><span><strong>Cannot determine yet</strong><span>Keep blocked and request clarification.</span></span></label></div></fieldset><div class="field" style="margin-top:14px"><label for="resolutionNote">Rationale</label><textarea id="resolutionNote" name="rationale" required placeholder="A brief scientific rationale is required for the audit trail."></textarea></div></div><div class="modal-footer"><button class="button" type="button" data-close-modal>Cancel</button><button class="button primary" type="submit">Record decision</button></div></form></dialog>
+  <div class="toast-region" id="toasts" aria-live="polite"></div><script type="module" src="./ui.js"></script>
+</body></html>

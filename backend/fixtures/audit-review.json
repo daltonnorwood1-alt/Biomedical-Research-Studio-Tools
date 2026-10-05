@@ -1,0 +1,59 @@
+{
+  "title": "Synthetic Table 2 integrity review",
+  "reviewed_at": "2026-10-04T18:10:00Z",
+  "scope": "Synthetic table, Methods excerpt, and Results excerpt",
+  "source_files": ["synthetic-manuscript.txt"],
+  "artifact": {
+    "label": "Table 2",
+    "type": "table",
+    "source_path": "",
+    "caption": "Synthetic values; no patient data",
+    "table": {
+      "columns": ["Group", "Estimate", "95% CI"],
+      "rows": [["Exposure X", "1.20", "0.98–1.47"]]
+    }
+  },
+  "interpretation": {
+    "headline": "The interval includes the null value",
+    "summary": "The synthetic estimate is imprecise and does not establish a causal effect.",
+    "key_points": ["Do not describe this as proof.", "<script>alert('escaped')</script>"]
+  },
+  "results": {
+    "location": "Results paragraph 2",
+    "excerpt": "Exposure X caused outcome Y."
+  },
+  "verdict": {
+    "status": "needs modifications",
+    "summary": "The displayed estimate and causal wording require correction.",
+    "modifications": ["Use associational language."]
+  },
+  "methods": {
+    "location": "Methods paragraph 4",
+    "excerpt": "We fit an adjusted observational regression model."
+  },
+  "methods_assessment": {
+    "status": "needs clarification",
+    "summary": "Adjustment alone does not establish causality."
+  },
+  "overall_confidence": "high",
+  "revisions": [],
+  "findings": [{
+    "id": "F-SYNTH-001",
+    "severity": "major",
+    "confidence": "high",
+    "status": "confirmed discrepancy",
+    "category": "causal language",
+    "location": "Results paragraph 2",
+    "observed": "caused",
+    "comparator": "observational design",
+    "evidence": "No causal identification method was supplied.",
+    "consequence": "The sentence overstates the design.",
+    "recommendation": "Use associated with after author approval."
+  }],
+  "checks": [{
+    "check": "Analysis population matches Methods",
+    "status": "not assessable",
+    "evidence": "No participant-level source was supplied."
+  }],
+  "limitations": ["Synthetic demonstration only."]
+}

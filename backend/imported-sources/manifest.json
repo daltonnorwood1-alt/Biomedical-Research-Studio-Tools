@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "recorded_at": "2026-10-04",
+  "handling": "Source archives remain unchanged in /Users/norwood/Downloads. Only inspected contents are adapted into the integrated plugin.",
+  "artifacts": [
+    {
+      "original_name": "audit-medical-data.zip",
+      "sha256": "ed18e784b35534ed8140a725bc7a21d6ab3a974cb977671b5c185ad251a3ff7d",
+      "source_location": "/Users/norwood/Downloads/audit-medical-data.zip",
+      "status": "adapted-source",
+      "target": "skills/medical-data-integrity-audit"
+    },
+    {
+      "original_name": "research-manuscript-writer (1).zip",
+      "sha256": "821363b853dfd4d468778d0fa1b4d161be20f0a234c728d4730d21c7a9192e49",
+      "source_location": "/Users/norwood/Downloads/research-manuscript-writer (1).zip",
+      "status": "canonical-adapted-source",
+      "target": "skills/research-manuscript-writer"
+    },
+    {
+      "original_name": "research-manuscript-writer (2).zip",
+      "sha256": "eecfb24b4010eef1d75d8f1cdf008ed8d078d25c8a9afa387c88e0ff5f0476fc",
+      "source_location": "/Users/norwood/Downloads/research-manuscript-writer (2).zip",
+      "status": "entry-identical-duplicate",
+      "duplicate_of": "research-manuscript-writer (1).zip",
+      "comparison": "All 13 archive entries have identical paths, byte lengths, and SHA-256 hashes. Container hashes differ."
+    }
+  ]
+}

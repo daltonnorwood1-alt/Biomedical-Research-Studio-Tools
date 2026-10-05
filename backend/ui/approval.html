@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><title>Research approval</title><link rel="stylesheet" href="./styles.css"></head>
+<body data-surface="cards">
+  <main class="inline-wrap" id="main">
+    <article class="inline-card card-view" data-card="approval">
+      <div class="card-body"><div class="card-header"><div><p class="eyebrow">Gate B · Human approval required</p><h1>Approve the audit source set?</h1></div><span class="status warning">Awaiting you</span></div><p class="muted">Eight immutable sources will govern the integrity audit. No quarantined files are included.</p><div class="callout"><strong>Consequence</strong><span>Approval permits audit findings to be generated. It does not approve manuscript wording or publication.</span></div><details><summary>Review included sources and open findings</summary><ul><li>Protocol v3 and analysis plan v2</li><li>Verified model outputs dated September 14</li><li>Manuscript v7, Table 1 and Figures 1–2</li><li>Open findings: none at this gate</li></ul></details></div>
+      <div class="card-footer"><button class="button primary" data-decision="approved">Approve source set</button><button class="button" data-decision="changes_requested">Request changes</button><button class="button danger" data-decision="rejected">Reject</button></div>
+    </article>
+  </main>
+  <dialog id="decisionDialog"><form id="decisionForm"><div class="modal-header"><div><p class="eyebrow">Approval rationale</p><h2 id="decisionTitle">Confirm decision</h2></div><button type="button" class="button icon-button ghost" data-close-modal aria-label="Close">×</button></div><div class="modal-body"><div class="field"><label for="approverName">Approver name</label><input id="approverName" name="approver" required autocomplete="name" placeholder="Name recorded in the approval trail"></div><div class="field" style="margin-top:14px"><label for="decisionRationale">Rationale</label><textarea id="decisionRationale" name="rationale" required placeholder="Why is this decision scientifically appropriate?"></textarea></div></div><div class="modal-footer"><button class="button" type="button" data-close-modal>Cancel</button><button class="button primary" type="submit">Record decision</button></div></form></dialog>
+  <div class="toast-region" id="toasts" aria-live="polite"></div><script type="module" src="./ui.js"></script>
+</body></html>

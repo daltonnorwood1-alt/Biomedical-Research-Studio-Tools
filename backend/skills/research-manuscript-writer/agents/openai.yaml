@@ -1,0 +1,8 @@
+interface:
+  display_name: "Research Manuscript Writer"
+  short_description: "Governed biomedical manuscript drafting"
+  default_prompt: "Use $research-manuscript-writer to draft or revise my biomedical manuscript from supplied evidence with reporting and integrity checks."
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+policy:
+  allow_implicit_invocation: true

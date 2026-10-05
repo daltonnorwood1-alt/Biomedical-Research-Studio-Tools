@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Set up Biomedical Research Studio</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-surface="onboarding">
+  <a class="skip-link" href="#main">Skip to setup</a>
+  <main class="onboarding" id="main">
+    <form class="onboarding-card" id="onboardingForm">
+      <div class="stepper" role="progressbar" aria-label="Onboarding progress" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"><span class="step-dot active"></span><span class="step-dot"></span><span class="step-dot"></span></div>
+      <section class="setup-step" data-step="1">
+        <p class="eyebrow">Welcome</p>
+        <h1>Set up a governed research workspace</h1>
+        <p class="lede">Choose what you are doing. The Studio will tailor its workflow and will never treat a draft as scientifically approved.</p>
+        <div id="existingProjects" hidden style="margin-top:20px"><h2>Open an existing project</h2><div class="choice-grid" id="existingProjectChoices"></div><p class="muted" style="margin:10px 0">Or create a new project below.</p></div>
+        <fieldset style="margin-top:24px">
+          <legend>What do you want to work on?</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="project_type" value="new manuscript" required><span><strong>New manuscript</strong><span>Draft from supplied methods, analyses and evidence.</span></span></label>
+            <label class="choice"><input type="radio" name="project_type" value="manuscript revision"><span><strong>Revise a manuscript</strong><span>Improve a supplied draft with traceable changes.</span></span></label>
+            <label class="choice"><input type="radio" name="project_type" value="peer review response"><span><strong>Respond to reviewers</strong><span>Map comments to evidence and revisions.</span></span></label>
+            <label class="choice"><input type="radio" name="project_type" value="data integrity audit"><span><strong>Audit data integrity</strong><span>Check sources, tables, figures and narrative.</span></span></label>
+            <label class="choice"><input type="radio" name="project_type" value="journal adaptation"><span><strong>Adapt for a journal</strong><span>Apply current author and reporting requirements.</span></span></label>
+            <label class="choice"><input type="radio" name="project_type" value="submission package"><span><strong>Prepare submission</strong><span>Verify the complete controlled release package.</span></span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="setup-step" data-step="2" hidden>
+        <p class="eyebrow">Study profile</p>
+        <h1>Tell us what kind of study this is</h1>
+        <p class="lede">Use selectable choices wherever possible. You can change these settings later.</p>
+        <div class="form-grid" style="margin-top:24px">
+          <div class="field wide"><label for="projectTitleInput">Project title</label><input id="projectTitleInput" name="title" required maxlength="200" placeholder="Use a clear internal project name"></div>
+          <fieldset class="field wide">
+            <legend>Study design</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="study_design" value="randomized trial" required><span><strong>Randomized trial</strong></span></label>
+              <label class="choice"><input type="radio" name="study_design" value="observational cohort"><span><strong>Observational cohort</strong></span></label>
+              <label class="choice"><input type="radio" name="study_design" value="case-control"><span><strong>Case-control</strong></span></label>
+              <label class="choice"><input type="radio" name="study_design" value="cross-sectional"><span><strong>Cross-sectional</strong></span></label>
+              <label class="choice"><input type="radio" name="study_design" value="systematic review"><span><strong>Systematic review</strong></span></label>
+              <label class="choice"><input type="radio" name="study_design" value="other"><span><strong>Other / not sure</strong></span></label>
+            </div>
+          </fieldset>
+          <div class="field"><label for="articleType">Article type</label><select id="articleType" name="article_type" required><option value="">Select one</option><option>Original research</option><option>Brief report</option><option>Systematic review</option><option>Methods paper</option><option>Case report</option><option>Protocol</option><option>Other</option></select></div>
+          <div class="field"><label for="journal">Target journal</label><input id="journal" name="target_journal" placeholder="Only if already selected"><small>Optional; exact names must be typed.</small></div>
+          <div class="field"><label for="authorRole">Your project role</label><select id="authorRole" name="author_role"><option value="">Select if applicable</option><option>Principal investigator</option><option>Corresponding author</option><option>Statistician</option><option>Methods lead</option><option>Research coordinator</option><option>Authorized delegate</option></select></div>
+        </div>
+      </section>
+
+      <section class="setup-step" data-step="3" hidden>
+        <p class="eyebrow">Privacy and control</p>
+        <h1>Choose how the Studio should handle your material</h1>
+        <p class="lede">These selections determine the first privacy screen and approval checkpoints.</p>
+        <div class="form-grid" style="margin-top:24px">
+          <fieldset class="field wide">
+            <legend>Could the files contain identifiable participant information?</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="identifiers" value="yes" required><span><strong>Yes</strong><span>Screen and quarantine before research use.</span></span></label>
+              <label class="choice"><input type="radio" name="identifiers" value="no"><span><strong>No</strong><span>Still run a basic identifier check.</span></span></label>
+              <label class="choice"><input type="radio" name="identifiers" value="unsure"><span><strong>Not sure</strong><span>Use the cautious screening path.</span></span></label>
+            </div>
+          </fieldset>
+          <fieldset class="field wide">
+            <legend>Approval style</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="approval_style" value="gate-by-gate" required><span><strong>Gate by gate</strong><span>Recommended. Pause at each scientific decision.</span></span></label>
+              <label class="choice"><input type="radio" name="approval_style" value="batch"><span><strong>Batch low-risk edits</strong><span>Group editorial changes; preserve scientific gates.</span></span></label>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+
+      <p class="validation" id="setupError" role="alert" hidden></p>
+      <div class="form-footer">
+        <button class="button" id="backButton" type="button" hidden>Back</button>
+        <span class="muted" id="stepLabel">Step 1 of 3</span>
+        <button class="button primary" id="nextButton" type="button">Continue</button>
+        <button class="button primary" id="finishButton" type="submit" hidden>Create workspace</button>
+      </div>
+    </form>
+  </main>
+  <div class="toast-region" id="toasts" aria-live="polite"></div>
+  <script type="module" src="./ui.js"></script>
+</body>
+</html>

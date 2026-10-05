@@ -1,0 +1,8 @@
+interface:
+  display_name: "Medical Data Integrity Audit"
+  short_description: "Publication-grade medical data cross-checks"
+  default_prompt: "Use $medical-data-integrity-audit to audit my manuscript, methods, tables, figures, and source data."
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+policy:
+  allow_implicit_invocation: true

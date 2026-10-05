@@ -3,10 +3,38 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Site</title>
+    <meta name="description" content="Biomedical Research Studio: governed manuscript writing, evidence review, scientific integrity auditing, and controlled document production in ChatGPT." />
+    <title>Biomedical Research Studio</title>
+    <style>
+      :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #16383f; background: #f4f7f6; }
+      body { margin: 0; }
+      main { max-width: 760px; margin: 0 auto; padding: 72px 24px; }
+      .mark { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 18px; background: #123c46; color: white; font-size: 30px; }
+      h1 { margin: 28px 0 12px; font-size: clamp(2.3rem, 6vw, 4.6rem); line-height: .98; letter-spacing: -.045em; }
+      .lead { max-width: 680px; font-size: 1.2rem; line-height: 1.65; color: #49666b; }
+      .panel { margin-top: 40px; padding: 24px; border: 1px solid #cddbd8; border-radius: 20px; background: white; }
+      .panel h2 { margin-top: 0; }
+      nav { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 40px; }
+      a { color: #0a6872; font-weight: 650; }
+      footer { margin-top: 56px; color: #6d7f82; font-size: .92rem; }
+    </style>
   </head>
   <body>
-    <h1>Welcome</h1>
-    <p>This site is live on GitHub Pages.</p>
+    <main>
+      <div class="mark" aria-hidden="true">✚</div>
+      <h1>Biomedical Research Studio</h1>
+      <p class="lead">A human-governed ChatGPT plugin suite for biomedical manuscript writing, evidence review, integrity auditing, approvals, and controlled document production.</p>
+      <section class="panel">
+        <h2>Safety-first research workflows</h2>
+        <p>The Studio keeps generated suggestions separate from scientific approval, maintains source and audit provenance, and requires explicit human decisions at consequential workflow gates.</p>
+        <p>The service does not provide medical care or replace qualified scientific, statistical, privacy, regulatory, or clinical review.</p>
+      </section>
+      <nav aria-label="Legal and support">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of use</a>
+        <a href="support.html">Support</a>
+      </nav>
+      <footer>Developed by Dalton Norwood.</footer>
+    </main>
   </body>
 </html>
